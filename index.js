@@ -10,7 +10,7 @@ const { handleURLShortner, getRedirectUrl, visitClickedHistory } = require('./co
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-const url = ('mongodb://127.0.0.1:27017/shortdb');
+const url = ('mongodb+srv://admin:vishalprakash0202@vishalcluster.f5o33pn.mongodb.net/?retryWrites=true&w=majority');
 
 connectToDb(url);
 
