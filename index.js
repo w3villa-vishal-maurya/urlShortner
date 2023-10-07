@@ -3,6 +3,7 @@ const urlRoute = require('./router/url');
 const { connectToDb } = require('./config/connection');
 const hbs = require("hbs");
 const bodyParser = require('body-parser');
+const env = require("dotenv").config();
 const { handleURLShortner, getRedirectUrl, visitClickedHistory } = require('./controller/url')
 
 
@@ -10,9 +11,9 @@ const { handleURLShortner, getRedirectUrl, visitClickedHistory } = require('./co
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-const url = ('mongodb+srv://admin:vishalprakash0202@vishalcluster.f5o33pn.mongodb.net/?retryWrites=true&w=majority');
+const url = ('');
 
-connectToDb(url);
+connectToDb(process.env.CONNECTION_STRING);
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
